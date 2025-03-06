@@ -47,29 +47,12 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000/blog](http://localhost:3000/blog) in your browser.
 
 ### Available Scripts
 
 - `npm run dev` - Starts the development server
-- `npm run build` - Creates a production build
-- `npm run start` - Runs the production server
-- `npm run lint` - Runs ESLint
 - `npm test` - Runs Jest tests
-
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── blog/              # Blog pages and components
-│   │   ├── [slug]/        # Individual blog post page
-│   │   └── page.tsx       # Blog listing page
-│   ├── components/        # Shared components
-│   └── layout.tsx         # Root layout
-├── types/                 # TypeScript type definitions
-└── tests/                 # Test files
-```
 
 ## Pages and Routing
 
