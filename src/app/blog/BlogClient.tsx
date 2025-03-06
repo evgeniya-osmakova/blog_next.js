@@ -28,19 +28,13 @@ export function BlogClient({ initialData, initialError }: BlogClientProps) {
 
     const [inputValue, setInputValue] = useState(searchQuery);
 
-    const debouncedSearch = useCallback(
-        (() => {
-            let timeoutId: NodeJS.Timeout;
-            return (value: string) => {
-                clearTimeout(timeoutId);
-
-                timeoutId = setTimeout(() => {
-                    setSearchQuery(value);
-                }, 300);
-            };
-        })(),
-        [setSearchQuery]
-    );
+    const debouncedSearch = useCallback((value: string) => {
+        const timeoutId = setTimeout(() => {
+            setSearchQuery(value);
+        }, 300);
+        
+        return () => clearTimeout(timeoutId);
+    }, [setSearchQuery]);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;

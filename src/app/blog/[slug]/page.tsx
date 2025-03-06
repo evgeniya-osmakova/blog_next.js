@@ -15,7 +15,6 @@ const getPost = async (slug: string): Promise<Post> => {
     return blogService.getPostById(slug);
 };
 
-// Генерация метаданных для страницы (для SEO и доступности)
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     try {
         const { slug } = await params;
@@ -37,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 description: article.body.substring(0, 160),
             },
         };
-    } catch (error) {
+    } catch {
         return {
             title: 'Article not found',
             description: 'The requested article could not be found',
@@ -55,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <BlogPost article={article} />
             </main>
         );
-    } catch (error) {
+    } catch {
         notFound();
     }
 }

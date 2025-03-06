@@ -2,9 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import ArticleContent from '../ArticleContent';
+import Image from 'next/image';
 
 jest.mock('@/app/components/OptimizedImage', () => ({
-    OptimizedImage: ({ alt, ...props }: any) => <img alt={alt} {...props} />
+    OptimizedImage: ({ alt, src, ...props }: { alt: string; src: string }) => 
+        <Image 
+            alt={alt} 
+            src={src}
+            {...props} 
+        />
 }));
 
 describe('ArticleContent', () => {

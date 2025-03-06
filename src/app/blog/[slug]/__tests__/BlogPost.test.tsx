@@ -1,14 +1,14 @@
-/// <reference types="jest" />
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, act } from '@testing-library/react';
 import { BlogPost } from '../BlogPost';
+import { Post } from '@/types/post';
 
 // Mock the ArticleContent component
 jest.mock('../ArticleContent', () => {
     return {
         __esModule: true,
-        default: ({ article, formattedDate }: any) => (
+        default: ({ article, formattedDate }: { article: Post; formattedDate: string }) => (
             <div data-testid="mocked-article-content">
                 <div>Title: {article.title}</div>
                 <div>Date: {formattedDate}</div>
