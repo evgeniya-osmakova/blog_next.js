@@ -1,6 +1,4 @@
-'use server'
-
-    import { Metadata } from 'next'
+import { Metadata } from 'next'
 import { BlogClient } from './BlogClient'
 import { BlogService } from '@/services/api'
 import { Post } from '@/types/post'
