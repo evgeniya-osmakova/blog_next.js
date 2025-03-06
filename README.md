@@ -1,5 +1,7 @@
 # Next.js Blog Application
 
+https://blog-next-ihzpotwq9-evgeniya-osmakovas-projects.vercel.app/blog
+
 A modern, accessible blog application built with Next.js 15, React 19, and TypeScript. This application demonstrates best practices in web development, including accessibility features, SEO optimization, and responsive design.
 
 ## Features
